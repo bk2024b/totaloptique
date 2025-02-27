@@ -1,0 +1,161 @@
+<!-- Page Services (services.html) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Même header que l'accueil -->
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Total Optique - Votre expert en santé visuelle au Bénin. Examens de vue gratuits, montures tendances et verres haute performance.">
+    <title>Total Optique - Excellence Visuelle au Bénin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Style personnalisé -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0b3d91 0%, #1a56a5 100%);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .brands-carousel {
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+</style>
+</head>
+<body>
+    <header class="bg-white sticky top-0 shadow-lg z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <a href="/" class="logo">
+                    <svg class="w-48 hover-scale" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#0b3d91" d="M0 50h100v10H0z"/><path fill="#e3173e" d="M120 50h100v10H120z"/>
+                        <text x="20" y="40" font-size="36" fill="#0b3d91">TOTAL</text>
+                        <text x="135" y="40" font-size="36" fill="#e3173e">PTIQUE</text>
+                        <path d="M110 60q20-20 40 0" stroke="#e3173e" stroke-width="4" fill="none"/>
+                    </svg>
+                </a>
+                
+                <!-- Menu mobile -->
+                <div class="md:hidden">
+                    <button id="menuBtn" class="text-blue-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation desktop -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#promotions" class="nav-link">Promotions</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Menu mobile déroulant -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <ul class="text-center py-4 space-y-4">
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#promotions" class="nav-link">Promotions</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold text-blue-900 mb-4">Nos Expertises</h1>
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="montures">Montures</button>
+                    <button class="filter-btn" data-filter="verres">Verres</button>
+                    <button class="filter-btn" data-filter="accessoires">Accessoires</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Carte Service 1 -->
+                <div class="service-item montures">
+                    <div class="service-image">
+                        <img src="/img/montures-luxe.jpg" alt="Montures de luxe">
+                        <div class="price-tag">À partir de 25.000 FCFA</div>
+                    </div>
+                    <h3>Montures Designer</h3>
+                    <ul class="checklist">
+                        <li>Matériaux hypoallergéniques</li>
+                        <li>Garantie 2 ans</li>
+                        <li>150+ modèles</li>
+                    </ul>
+                </div>
+
+                <!-- Carte Service 2 -->
+                <div class="service-item verres">
+                    <div class="service-image">
+                        <img src="/img/verres-progressifs.jpg" alt="Verres progressifs">
+                        <div class="tech-badge">Blue Light Protect</div>
+                    </div>
+                    <h3>Verres High-Tech</h3>
+                    <ul class="checklist">
+                        <li>Anti-reflets</li>
+                        <li>Protection UV400</li>
+                        <li>Traiterments anti-rayures</li>
+                    </ul>
+                </div>
+
+                <!-- Plus de cartes... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Technologie -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Nos Technologies</h2>
+                <p class="opacity-90">Innovation au service de votre confort visuel</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="tech-card">
+                    <img src="/img/icon-blue-light.svg" alt="Protection lumière bleue" class="w-16 mx-auto">
+                    <h4>Blue Control</h4>
+                    <p class="text-sm">Filtre lumière bleue</p>
+                </div>
+                <!-- Plus de technologies... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer identique à l'accueil -->
+<script>
+        // Gestion du menu mobile
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animation au scroll
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if(cardTop < window.innerHeight - 100) {
+                    card.classList.add('animate-fade-up');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
