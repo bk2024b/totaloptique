@@ -4,8 +4,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, Eye, Glasses, Phone, Mail, MapPin, Check } from 'lucide-react';
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
